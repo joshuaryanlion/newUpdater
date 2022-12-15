@@ -194,3 +194,17 @@ function identifyPath(mountain) {
 /*************DO NOT MODIFY UNDER THIS LINE ***************/
 
 module.exports = [identifyPath, findNeighbors, pathTraversal];
+
+let nodeVal = matrix[node[0]][node[1]];
+    let neighbors = [];
+    const [row1, col1] = node;
+    for(let row = -1; row <= 1; row++){
+        for(let col = -1; col <= 1; col++){
+            let checkCoord = [row1 + row, col1 + col];
+            if(matrix[checkCoord[0]]) {
+                let curr = matrix[checkCoord[0]][checkCoord[1]];
+                if(!(node.toString() === checkCoord.toString()) && (Math.abs(curr - nodeVal)  <= 1 )) neighbors.push(checkCoord);
+            }
+        }
+    }
+    return neighbors;
