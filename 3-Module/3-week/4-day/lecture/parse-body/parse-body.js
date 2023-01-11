@@ -9,18 +9,19 @@ function secondStep(input) {
 }
 
 function thirdStep(input) {
-  // Your code here
-  const res = []
-  input.forEach(ele1 => {
-    ele1.forEach((ele2, i) => {
-      if(ele2.includes('+')){
-        ele1[i] = ele2.replace('+', ' ')
-      }
-    })
-    res.push(ele1)
-  })
-  return res
-  // return input.map(([key, value]) => [key, value.replace('+', ' ')])
+  return input.map(([key, value]) => [key, value.split("+").join("")])
+  // // Your code here
+  // const res = []
+  // input.forEach(ele1 => {
+  //   ele1.forEach((ele2, i) => {
+  //     if(ele2.includes('+')){
+  //       ele1[i] = ele2.replace('+', ' ')
+  //     }
+  //   })
+  //   res.push(ele1)
+  // })
+  // return res
+  // // return input.map(([key, value]) => [key, value.replace('+', ' ')])
 }
 
 function fourthStep(input) {
@@ -45,7 +46,11 @@ function fifthStep(input) {
   //   obj[ele[0]] = ele[1]
   // })
 
-  // return obj
+  // // return obj
+  // return input.reduce((acc, [key, value]) => {
+  //   acc[key] = value
+  //   return acc
+  // }, [])
   return Object.fromEntries(input)
 }
 
