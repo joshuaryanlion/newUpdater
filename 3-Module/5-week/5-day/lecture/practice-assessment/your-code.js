@@ -12,6 +12,7 @@ const box1 = document.getElementById('problem-one')
 // box1.innerText = ''
 const button = document.createElement('button')
 button.innerText = '1'
+box1.innerText = ""
 // box1.appendChild(button)
 box1.replaceChildren(button)
 
